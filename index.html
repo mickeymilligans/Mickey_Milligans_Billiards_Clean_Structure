@@ -18,6 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Rye&family=Yellowtail&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/promo-popup.css">
 </head>
 <body>
 <site-header></site-header>
@@ -104,7 +105,20 @@
 </main>
 
 <footer><div class="footer-logo">♣ <strong>MICKEY MILLIGANS</strong> <span>BILLIARDS</span></div><p>Good shots. Cold drinks. Great company.</p><p>© 2026 Mickey Milligans Billiards</p></footer>
+<mickey-promo-popup
+  enabled="true"
+  delay-seconds="2"
+  flyer="assets/popup-flyers/biweekly.PNG"
+  popup-title="Biweekly House Tournament"
+  message="Doors open at noon. Tournament starts at 1 PM."
+  button-text="View Events"
+  button-link="events.html"
+  show-once="true"
+  show-dismiss-option="true"
+  storage-key="mm-house-tournament-popup">
+</mickey-promo-popup>
 <script src="components/site-header.js"></script>
 <script src="js/script.js"></script>
+<script src="js/promo-popup.js"></script>
 </body>
 </html>

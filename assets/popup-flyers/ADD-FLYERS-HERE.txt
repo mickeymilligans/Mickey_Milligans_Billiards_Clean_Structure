@@ -1,0 +1,1 @@
+Place JPG, PNG, or WebP flyer images in this folder.
