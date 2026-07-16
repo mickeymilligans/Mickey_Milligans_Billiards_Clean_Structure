@@ -7,5 +7,7 @@
 			"path": "../Mickey_Milligans_Google_Calendar_With_Flyers/images"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.autoSave": "afterDelay"
+	}
 }
