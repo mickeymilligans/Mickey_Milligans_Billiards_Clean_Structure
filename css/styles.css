@@ -93,7 +93,7 @@ footer{text-align:center;padding:45px;background:#070908;border-top:1px solid #2
 .weekly-card h3{font-family:Bebas Neue;font-size:34px;margin:15px 0 5px}
 .weekly-card p:not(.eyebrow):not(.rate-unit){font-family:Arial;color:#d4dbd7;line-height:1.65;max-width:430px}
 .rate-details{display:grid;grid-template-columns:1fr 1fr;min-height:620px;padding:0}
-.details-photo{background:url('..assets/tables closer.jpg') center/cover}
+.details-photo{background:url('../assets/tables closer.jpg') center/cover}
 .details-copy{background:#111713;padding:10%}
 .details-copy h2{font-family:Bebas Neue;font-size:58px;margin:8px 0}
 .detail-list p{font-family:Arial;line-height:1.75;color:#b7c0ba;border-bottom:1px solid #344139;padding:15px 0}
