@@ -30,6 +30,14 @@ class SiteHeader extends HTMLElement {
           ${navLinks}
         </nav>
 
+        <a href="https://www.facebook.com/mickeymilligans/"
+        class="facebook-icon"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit our Facebook page">
+        <img src="assets/facebook-icon-40x40.svg" alt="Facebook Icon">
+      </a>
+
         <a class="header-call" href="tel:+12524977123">Call Us</a>
       </header>
     `;
