@@ -28,6 +28,10 @@ body.mm-popup-open{
   backdrop-filter:blur(4px);
 }
 
+.mm-popup-overlay[hidden] {
+  display: none !important;
+}
+
 .mm-popup-card{
   position:relative;
   display:grid;
