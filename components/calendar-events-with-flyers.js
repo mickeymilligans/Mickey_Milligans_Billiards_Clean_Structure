@@ -245,7 +245,7 @@ class MickeyCalendarEvents extends HTMLElement {
     //https://drive.google.com/open?id=FILE_ID
     //https://drive.google.com/uc?id=FILE_ID
 
-    const fileIdMatch = url.match(/drive\.google\.com\/file\/d\/([^/?#]+)/;
+    const filePathMatch = url.match(/drive\.google\.com\/file\/d\/([^/?#]+)/);
 
     const idParameterMatch = url.match(/[?&]id=([^&#]+)/);
 
