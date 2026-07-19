@@ -8,7 +8,8 @@ class SiteHeader extends HTMLElement {
       { label: "Tables & Rates", href: "tables-rates.html", page: "tables-rates.html" },
       { label: "Events", href: "events.html", page: "events.html" },
       { label: "Leagues", href: "leagues.html", page: "leagues.html" },
-      { label: "Contact", href: "contact.html", page: "contact.html" }
+      { label: "Contact", href: "contact.html", page: "contact.html" },
+      { label: "Gallery", href: "gallery.html", page: "gallery.html" }
     ];
 
     const navLinks = links.map(link => {
