@@ -203,21 +203,32 @@ class MickeyCalendarEvents extends HTMLElement {
   }
 
   parseDescription(description) {
-    const lines = description.split(/\r?\n/);
+    const container = document.createElement("div");
+    container.innerHTML = description;
+    container.querySelectorAll("a").forEach(link => {
+      link.replaceWith(link.href);
+    });
+
+    const plainDescription = container.textContent ||
+    container.innerText || "";
+
+    const lines = plainDescription.split(/\r?\n/);
+    
     let flyer = "";
     let type = "";
     let location = "";
     const cleanLines = [];
 
     lines.forEach(line => {
-      const flyerMatch = line.match(/^\s*(?:FLYER|IMAGE|FLYER URL)\s*:\s*(https?:\/\/\S+)\s*$/i);
-      const typeMatch = line.match(/^\s*TYPE\s*:\s*(.+)\s*$/i);
-      const locationMatch = line.match(/^\s*LOCATION\s*:\s*(.+)\s*$/i);
+      const trimmedLine = line.trim();
+      const flyerMatch = trimmedLine.match(/^(?:FLYER|IMAGE|FLYER URL)\s*:\s*(https?:\/\/\S+)/i);
+      const typeMatch = trimmedLine.match(/^TYPE\s*:\s*(.+)$/i);
+      const locationMatch = trimmedLine.match(/^LOCATION\s*:\s*(.+)$/i);
 
-      if (flyerMatch) flyer = flyerMatch[1];
+      if (flyerMatch) flyer = this.convertGoogleDriveURL(flyerMatch[1]);
       else if (typeMatch) type = typeMatch[1].trim();
       else if (locationMatch) location = locationMatch[1].trim();
-      else cleanLines.push(line);
+      else if (trimmedLine) cleanLines.push(trimmedLine);
     });
 
     return {
@@ -226,6 +237,26 @@ class MickeyCalendarEvents extends HTMLElement {
       location,
       cleanDescription: cleanLines.join("\n").trim()
     };
+  }
+
+  convertGoogleDriveURL(url) {
+    //Handles:
+    //https://drive.google.com/file/d/FILE_ID/view
+    //https://drive.google.com/open?id=FILE_ID
+    //https://drive.google.com/uc?id=FILE_ID
+
+    const fileIdMatch = url.match(/drive\.google\.com\/file\/d\/([^/?#]+)/;
+
+    const idParameterMatch = url.match(/[?&]id=([^&#]+)/);
+
+    const fileId = filePathMatch?.[1] ||
+      idParameterMatch?.[1];
+      
+    if (!fileId) {
+      return url;
+    }
+
+    return `https://drive.google.com/thumbnail?id=${encodeURIComponent(fileId)}&sz=w1600`;
   }
 
   guessEventType(title) {

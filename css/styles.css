@@ -39,7 +39,7 @@ footer{text-align:center;padding:45px;background:#070908;border-top:1px solid #2
 .values-grid p{color:#aeb6b0;font-family:Arial;line-height:1.65}
 .value-icon{font-size:38px;color:var(--gold)}
 .community-band{display:grid;grid-template-columns:1.1fr .9fr;min-height:610px}
-.community-photo{background:url('https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&w=140') center/cover}
+.community-photo{background:url('../assets/CIU4C photo ABUS.JPG') center/cover}
 .community-copy{background:#e9e0cd;color:#171b18;padding:10%}
 .about-cta{display:flex;align-items:center;justify-content:space-between;gap:40px;background:linear-gradient(90deg,#0b5c3b,#0d3528)}
 .about-cta h2{margin:8px 0}
